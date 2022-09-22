@@ -7,10 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceWebApi", "SourceWebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceWebApiTests", "SourceWebApiTests\SourceWebApiTests.csproj", "{5D2533F8-63AB-4767-8989-4EEBB55EF1F2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3606D5E9-B80D-4DDA-AC68-46199DD34AA9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Jenkins", "Jenkins", "{BAD61208-ED84-462C-975A-83D23BAA2278}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{86B37311-D67C-45BC-B629-015E43F3BB72}"
 	ProjectSection(SolutionItems) = preProject
-		Jenkinsfile.groovy = Jenkinsfile.groovy
+		Jenkins\Main\Jenkinsfile = Jenkins\Main\Jenkinsfile
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedLibrary", "SharedLibrary", "{CE79D392-08FD-4399-9B75-0246FBCC431D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{86B37311-D67C-45BC-B629-015E43F3BB72} = {BAD61208-ED84-462C-975A-83D23BAA2278}
+		{CE79D392-08FD-4399-9B75-0246FBCC431D} = {BAD61208-ED84-462C-975A-83D23BAA2278}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D46724D3-A1E5-410B-A0C4-658E053B7685}
