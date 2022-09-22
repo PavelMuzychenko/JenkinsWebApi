@@ -7,17 +7,17 @@ pipeline {
 	    stage ('Build') {
 	       steps{
  	            git url: 'https://github.com/PavelMuzychenko/JenkinsWebApi.git'
- 	            build('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln')
+ 	            build('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Shared\\SourceWebApi.sln')
 	       }
 	    }
 	    stage ('Tests'){
 	        steps{
-	            runTests ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\TestResults')
+	            runTests ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Shared\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\TestResults')
 	        }
 	    }
 	    stage ('Publish'){
 	        steps{
-	            publish ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\Publish')	               
+	            publish ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Shared\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\Publish')	               
 	        }
 	    }
     }
