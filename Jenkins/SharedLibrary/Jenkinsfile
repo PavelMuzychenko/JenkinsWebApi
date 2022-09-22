@@ -1,4 +1,4 @@
-library identifier: 'JenkinsSharedLibrary@master',
+library identifier: 'SharedLibrary@main',
     retriever: modernSCM([$class:'GitSCMSource', remote: 'https://github.com/PavelMuzychenko/JenkinsSharedLibrary.git'])
 
 pipeline {
