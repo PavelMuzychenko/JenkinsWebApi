@@ -1,1 +1,30 @@
+library identifier: 'JenkinsSharedLibrary@master',
+    retriever: modernSCM([$class:'GitSCMSource', remote: 'https://github.com/PavelMuzychenko/JenkinsSharedLibrary.git'])
 
+pipeline {
+    agent any
+    stages{
+	    stage ('Build') {
+	       steps{
+ 	            git url: 'https://github.com/PavelMuzychenko/JenkinsWebApi.git'
+ 	            build('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln')
+	       }
+	    }
+	    stage ('Tests'){
+	        steps{
+	            runTests ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\TestResults')
+	        }
+	    }
+	    stage ('Publish'){
+	        steps{
+	            publish ('C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\RepositoryJenkinsfileWebApi\\SourceWebApi.sln', 'D:\\Code\\Jenkins\\TargetWebApi\\Publish')	               
+	        }
+	    }
+    }
+    post {
+        always{
+            mstest testResultsFile: 'D:\\Code\\Jenkins\\TargetWebApi\\TestResults\\Results.trx'
+            sendEmail('Admin@hog')
+        }
+    }
+}
